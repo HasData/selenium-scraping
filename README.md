@@ -1,6 +1,6 @@
 ![Python](https://img.shields.io/badge/python-3.7+-blue)
 ![Node.js](https://img.shields.io/badge/node.js-18+-green)
-![Selenium](https://img.shields.io/badge/selenium-4.36.0-blueviolet)
+![Selenium](https://img.shields.io/badge/selenium-4.36+-blueviolet)
 
 # Selenium Scraping Examples (Python & Node.js)
 [![HasData_bannner](banner.png)](https://hasdata.com/)
@@ -139,4 +139,5 @@ These examples are for **educational purposes** only. Learn more about [the lega
 
 * Full tutorial: [The Complete Guide to Web Scraping with Selenium in Python](https://hasdata.com/blog/web-scraping-using-selenium-python)
 * [Join the community on Discord](https://discord.com/invite/QeuPtWpkAt)
+
 * [Star this repo if helpful ⭐](#)
