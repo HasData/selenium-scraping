@@ -2,24 +2,23 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 with webdriver.Chrome() as driver:
-    driver.get("https://example.com")
+    driver.get("https://the-internet.herokuapp.com/iframe")
 
-    # Open new tab
-    driver.execute_script("window.open('https://hasdata.com/');")
+    # Open new tab and switch between windows
+    driver.execute_script("window.open('https://the-internet.herokuapp.com/javascript_alerts');")
     driver.switch_to.window(driver.window_handles[1])
-    print(driver.title)
+    print("second tab:", driver.title)
 
-    # Switch back
-    driver.switch_to.window(driver.window_handles[0])
-
-    # Switch to iframe
-    iframe = driver.find_element(By.CSS_SELECTOR, "#my-iframe")
-    driver.switch_to.frame(iframe)
-    driver.find_element(By.CSS_SELECTOR, "button").click()
-    driver.switch_to.default_content()
-
-    # Handle alert
-    driver.execute_script("alert('Hello!');")
+    # Handle an alert on this tab
+    driver.find_element(By.CSS_SELECTOR, "button[onclick='jsAlert()']").click()
     alert = driver.switch_to.alert
-    print(alert.text)
+    print("alert says:", alert.text)
     alert.accept()
+
+    # Back to the first tab and into its iframe
+    driver.switch_to.window(driver.window_handles[0])
+    iframe = driver.find_element(By.ID, "mce_0_ifr")
+    driver.switch_to.frame(iframe)
+    body = driver.find_element(By.TAG_NAME, "body")
+    print("iframe body:", body.text[:40])
+    driver.switch_to.default_content()

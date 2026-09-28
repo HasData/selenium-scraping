@@ -1,9 +1,12 @@
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
 import os
 import time
 
-download_dir = "/downloads"
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+
+download_dir = os.path.abspath("downloads")
+os.makedirs(download_dir, exist_ok=True)
 
 options = Options()
 prefs = {
@@ -13,14 +16,22 @@ prefs = {
 options.add_experimental_option("prefs", prefs)
 
 with webdriver.Chrome(options=options) as driver:
-    driver.get("https://example.com")
-    driver.find_element(By.ID, "download-btn").click()
+    driver.get("https://the-internet.herokuapp.com/download")
 
-    # Wait for download to complete
-    timeout = 10
-    while timeout > 0:
-        if any(fname.endswith(".crdownload") for fname in os.listdir(download_dir)):
-            time.sleep(1)
-            timeout -= 1
-        else:
+    # Click the first listed file
+    link = driver.find_element(By.CSS_SELECTOR, ".example a")
+    filename = link.text
+    link.click()
+
+    # Wait for the download to land
+    timeout = 15
+    path = os.path.join(download_dir, filename)
+    for _ in range(timeout):
+        if os.path.exists(path) and not os.path.exists(path + ".crdownload"):
             break
+        time.sleep(1)
+
+    if os.path.exists(path):
+        print(f"downloaded {filename}, {os.path.getsize(path)} bytes")
+    else:
+        print(f"download did not finish within {timeout}s")

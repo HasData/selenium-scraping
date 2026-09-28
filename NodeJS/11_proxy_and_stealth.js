@@ -33,7 +33,7 @@ async function main() {
     .build();
 
   try {
-    await driver.get("https://example.com");
+    await driver.get("https://quotes.toscrape.com");
     await applyBasicStealth(driver);
 
     const title = await driver.getTitle();

@@ -5,10 +5,10 @@ async function main() {
   const driver = await new Builder().forBrowser("chrome").setChromeOptions(new chrome.Options().headless()).build();
 
   try {
-    await driver.get("https://example.com/");
+    await driver.get("https://the-internet.herokuapp.com/shadowdom");
 
     // Example of accessing shadow DOM element
-    const host = await driver.findElement(By.css("shadow-elem"));
+    const host = await driver.findElement(By.css("my-paragraph"));
     const shadowRoot = await driver.executeScript("return arguments[0].shadowRoot", host);
     const child = await driver.executeScript("return arguments[0].querySelector('shadow-elem')", shadowRoot);
 

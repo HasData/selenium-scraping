@@ -1,17 +1,17 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import StaleElementReferenceException
-import time
 
 with webdriver.Chrome() as driver:
-    driver.get("https://example.com/dynamic")
+    driver.get("https://the-internet.herokuapp.com/dynamic_content")
 
-    for _ in range(5):
-        try:
-            elem = driver.find_element(By.ID, "dynamic-content")
-            print(elem.text)
-        except StaleElementReferenceException:
-            print("Element went stale, retrying...")
-            time.sleep(1)
-            elem = driver.find_element(By.ID, "dynamic-content")
-            print(elem.text)
+    # Grab a content block, then reload: the old reference goes stale
+    block = driver.find_element(By.CSS_SELECTOR, "#content .row")
+    driver.refresh()
+
+    try:
+        print(block.text[:40])
+    except StaleElementReferenceException:
+        print("stale reference after refresh, re-finding")
+        block = driver.find_element(By.CSS_SELECTOR, "#content .row")
+        print("fresh text:", block.text[:40].replace("\n", " "))

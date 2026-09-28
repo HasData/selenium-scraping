@@ -5,7 +5,7 @@ async function main() {
   const driver = await new Builder().forBrowser("chrome").setChromeOptions(new chrome.Options().headless()).build();
 
   try {
-    await driver.get("https://example.com");
+    await driver.get("https://quotes.toscrape.com");
     console.log("Title:", await driver.getTitle());
 
     // Navigate forward, backward, refresh

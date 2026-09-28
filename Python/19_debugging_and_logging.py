@@ -1,11 +1,12 @@
+import logging
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import logging
 
 logging.basicConfig(level=logging.INFO)
 
 with webdriver.Chrome() as driver:
-    driver.get("https://example.com")
+    driver.get("https://quotes.toscrape.com")
 
     # Screenshot full page
     driver.save_screenshot("screenshot.png")

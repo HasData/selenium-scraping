@@ -1,0 +1,26 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+#popup { height: 400px; width: 360px; overflow-y: scroll; border: 1px solid #999; }
+.row { height: 48px; border-bottom: 1px solid #eee; padding: 4px; }
+</style></head><body>
+<div id="popup"></div>
+<script>
+const popup = document.getElementById('popup');
+let total = 0, pending = false;
+function addBatch() {
+  for (let i = 0; i < 10 && total < 100; i++) {
+    total += 1;
+    const d = document.createElement('div');
+    d.className = 'row'; d.textContent = 'follower ' + total;
+    popup.appendChild(d);
+  }
+  pending = false;
+}
+popup.addEventListener('scroll', () => {
+  if (pending || total >= 100) return;
+  if (popup.scrollTop + popup.clientHeight >= popup.scrollHeight - 40) {
+    pending = true;
+    setTimeout(addBatch, 300);
+  }
+});
+addBatch();
+</script></body></html>

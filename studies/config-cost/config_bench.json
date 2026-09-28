@@ -1,0 +1,71 @@
+{
+ "headed": {
+  "runs_n": 20,
+  "failures": 0,
+  "start_median": 1.425,
+  "to_element_median": 2.911,
+  "rss_mb_median": 546.5,
+  "bytes_median": 317415.0
+ },
+ "headless": {
+  "runs_n": 20,
+  "failures": 0,
+  "start_median": 1.383,
+  "to_element_median": 2.348,
+  "rss_mb_median": 540.0,
+  "bytes_median": 317419.5
+ },
+ "images-off": {
+  "runs_n": 20,
+  "failures": 0,
+  "start_median": 1.387,
+  "to_element_median": 2.485,
+  "rss_mb_median": 539.0,
+  "bytes_median": 312484.0
+ },
+ "cdp-block": {
+  "runs_n": 20,
+  "failures": 0,
+  "start_median": 1.379,
+  "to_element_median": 2.458,
+  "rss_mb_median": 536.5,
+  "bytes_median": 271605.0
+ },
+ "js-off": {
+  "runs_n": 20,
+  "failures": 0,
+  "start_median": 1.368,
+  "to_element_median": 1.587,
+  "rss_mb_median": 506.5,
+  "bytes_median": 59261.5
+ },
+ "proxy": {
+  "runs_n": 20,
+  "failures": 0,
+  "start_median": 1.371,
+  "to_element_median": 2.681,
+  "rss_mb_median": 540.0,
+  "bytes_median": 317472.0
+ },
+ "uc": {
+  "runs_n": 20,
+  "failures": 0,
+  "start_median": 8.772,
+  "to_element_median": 2.64,
+  "rss_mb_median": 599.5,
+  "bytes_median": 317399.5
+ },
+ "sannysoft_headed": {
+  "failed": 1,
+  "passed": 23,
+  "note": "10s wait; the first 4s run rendered only 4 checks"
+ },
+ "sannysoft_headless": {
+  "failed": 4,
+  "passed": 21
+ },
+ "sannysoft_uc": {
+  "failed": 3,
+  "passed": 21
+ }
+}

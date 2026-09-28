@@ -1,0 +1,45 @@
+{
+ "target": "https://books.toscrape.com/",
+ "proxy": "127.0.0.1:8899 (proxy.py, Basic auth)",
+ "versions": {
+  "selenium": "4.47.0",
+  "python": "3.14.7"
+ },
+ "results": {
+  "credentials in --proxy-server": {
+   "headless": {
+    "verdict": "blocked",
+    "detail": "books.toscrape.com",
+    "seconds": 34.0
+   }
+  },
+  "--proxy-server without credentials": {
+   "headless": {
+    "verdict": "no page",
+    "detail": "",
+    "seconds": 1.8
+   }
+  },
+  "extension answering onAuthRequired": {
+   "headless": {
+    "verdict": "no page",
+    "detail": "",
+    "seconds": 1.9
+   }
+  },
+  "selenium-wire": {
+   "headless": {
+    "verdict": "error",
+    "detail": "ModuleNotFoundError: No module named 'seleniumwire'",
+    "seconds": 0.0
+   }
+  },
+  "seleniumbase proxy option": {
+   "headless": {
+    "verdict": "no page",
+    "detail": "",
+    "seconds": 135.7
+   }
+  }
+ }
+}

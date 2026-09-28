@@ -1,20 +1,17 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 
 with webdriver.Chrome() as driver:
-    driver.get("https://example.com/login")
+    driver.get("https://the-internet.herokuapp.com/login")
 
-    # Fill input fields
-    username = driver.find_element(By.ID, "username")
-    username.send_keys("my_user")
+    # Fill the form and submit (the sandbox's published demo credentials)
+    driver.find_element(By.ID, "username").send_keys("tomsmith")
+    driver.find_element(By.ID, "password").send_keys("SuperSecretPassword!")
+    driver.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
 
-    password = driver.find_element(By.ID, "password")
-    password.send_keys("my_password")
+    banner = driver.find_element(By.ID, "flash")
+    print(banner.text.split("\n")[0])
 
-    # Submit form
-    password.send_keys(Keys.RETURN)
-
-    # Click button
-    btn = driver.find_element(By.CSS_SELECTOR, ".submit-btn")
-    btn.click()
+    # Log back out through the button
+    driver.find_element(By.CSS_SELECTOR, "a.button").click()
+    print("back at:", driver.current_url)
