@@ -2,7 +2,7 @@
 
 ![Python 3.7 or newer badge](https://img.shields.io/badge/python-3.7+-blue) ![Node.js 18 or newer badge](https://img.shields.io/badge/node.js-18+-green) ![Selenium 4.36 badge](https://img.shields.io/badge/selenium-4.36+-blueviolet)
 
-[![HasData, the web scraping API some examples call](banner.png)](https://hasdata.com/)
+[![HasData, the web scraping API some examples call](banner.png)](https://hasdata.com/?utm_source=github&utm_medium=syndication&utm_campaign=web-scraping-using-selenium-python&utm_content=selenium-scraping-readme)
 
 This repo contains working **Selenium examples** for web scraping in **Python** and **Node.js**.  
 It covers everything from driver setup, navigation, waits, element extraction, downloads, network/proxy management, to scaling strategies (Grid) and async scraping.
@@ -143,7 +143,7 @@ The `studies/` folder holds three measurements from our article work, each with 
 
 ## Disclaimer
 
-These examples are for **educational purposes** only. Learn more about [the legality of web scraping](https://hasdata.com/blog/is-web-scraping-legal).
+These examples are for **educational purposes** only. Learn more about [the legality of web scraping](https://hasdata.com/blog/is-web-scraping-legal?utm_source=github&utm_medium=syndication&utm_campaign=web-scraping-using-selenium-python&utm_content=selenium-scraping-readme).
 
 
 ## Notes
@@ -155,7 +155,7 @@ These examples are for **educational purposes** only. Learn more about [the lega
 
 ## 📎 More Resources
 
-* [The Complete Guide to Web Scraping with Selenium in Python](https://hasdata.com/blog/web-scraping-using-selenium-python), the tutorial these scripts follow
+* [The Complete Guide to Web Scraping with Selenium in Python](https://hasdata.com/blog/web-scraping-using-selenium-python?utm_source=github&utm_medium=syndication&utm_campaign=web-scraping-using-selenium-python&utm_content=selenium-scraping-readme), the tutorial these scripts follow
 * [Join the community on Discord](https://discord.com/invite/QeuPtWpkAt)
 
 * [Star this repo if helpful ⭐](#)
